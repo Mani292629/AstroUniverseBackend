@@ -32,7 +32,7 @@ const app = express();
 
 
 app.use(cors({
-  origin: 'https://astro-universe-frontend.vercel.app', // React app origin
+  origin: 'https://astrouniverse-frontend.vercel.app', // React app origin
   credentials: true,               // Needed if using cookies, sessions, etc.
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -52,7 +52,7 @@ cloudinary();
 
 
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://astro-universe-frontend.vercel.app");
+  res.header("Access-Control-Allow-Origin", "https://astrouniverse-frontend.vercel.app");
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
@@ -75,7 +75,7 @@ app.get("/", (req, res) => {
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'https://astro-universe-frontend.vercel.app',
+    origin: 'https://astrouniverse-frontend.vercel.app',
     methods: ['GET', 'POST']
   }
 });
